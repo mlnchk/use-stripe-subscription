@@ -132,6 +132,9 @@ async function redirectToCheckout({ customerId, body }) {
       cancel_url: body.cancelUrl,
       line_items: [{ price: body.price, quantity: 1 }],
       mode: "subscription",
+      subscription_data: {
+        ...body.trialPeriodDays && { trial_period_days: body.trialPeriodDays },
+      }
     });
   }
   return { error: "Error" };

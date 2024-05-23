@@ -41,6 +41,7 @@ export interface redirectToCheckoutArgs {
   price: string;
   successUrl?: string;
   cancelUrl?: string;
+  trialPeriodDays?: number
 }
 
 export interface redirectToCustomerPortalArgs {
